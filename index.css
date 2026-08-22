@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #09212A;
-    --secondary-color: #06171E;
+    --primary-color: #09212a;
+    --secondary-color: #06171e;
     --border-color: #124658;
-    --text-color: #FFFFFF;
+    --text-color: #ffffff;
     --hover-color: #6bc1e1;
     --font-family: "Figtree", sans-serif;
 }
@@ -148,5 +148,4 @@ h1 {
 .site_footer_content image {
     width: 133.280517578125;
     height: 32;
-
 }
