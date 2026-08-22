@@ -3,6 +3,7 @@
     --secondary-color: #06171E;
     --border-color: #124658;
     --text-color: #FFFFFF;
+    --hover-color: #6bc1e1;
     --font-family: "Figtree", sans-serif;
 }
 
@@ -43,12 +44,13 @@ main {
     background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .fotogram {
     max-width: 1170px;
     display: flex;
+    margin-top: 240px;
     flex-direction: column;
     align-items: center;
     gap: 80px;
@@ -73,6 +75,26 @@ h1 {
     row-gap: 40px;
 }
 
+.images img:nth-child(8) {
+    grid-column: 2;
+}
+
+.images img:nth-child(9) {
+    grid-column: 3;
+}
+
+.images img:nth-child(10) {
+    grid-column: 4;
+}
+
+.images img:nth-child(11) {
+    grid-column: 5;
+}
+
+.images img:nth-child(12) {
+    grid-column: 6;
+}
+
 .images img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -80,6 +102,13 @@ h1 {
     border: 2px solid var(--border-color);
     border-radius: 16px;
     display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.images img:hover {
+    border-color: var(--hover-color);
+    border-width: 3px;
 }
 
 .site_footer {
