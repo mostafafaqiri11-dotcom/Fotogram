@@ -150,30 +150,121 @@ h1 {
     height: 32;
 }
 
-.image-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.85);
+.dialog {
+    width: 688px;
+    height: 674.71px;
+    margin: 0 auto;
+    margin-top: 81px;
+    border: none;
+    border-radius: 40px;
+    overflow: hidden;
+}
 
+.dialog_main {
+    background-color: var(--primary-color);
+    width: 688px;
+    height: 674.71px;
+    padding-right: 64px;
+    padding-left: 64px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 48px;
 
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.3s ease;
-    z-index: 1000;
 }
 
-.image-overlay.active {
-    opacity: 1;
-    visibility: visible;
+.dialog_header {
+    width: 560px;
+    height: 32px;
+    margin-top: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.image-overlay img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 16px;
+.dialog_header h2 {
+    font-family: "Figtree", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--text-color);
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    vertical-align: middle;
+}
+
+.dialog_header_button {
+    width: 32px;
+    height: 32px;
+    background-image: url("Fotos/closeIcon.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.dialog_header_button:hover {
+    width: 32px;
+    height: 32px;
+    background-image: url("Fotos/closeHoverIcon.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.dialog_section img {
+    width: 560px;
+    height: 374px;
+    object-fit: fill;
+}
+
+.dialog_footer {
+    width: 261px;
+    height: 60px;
+    margin-bottom: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog_footer_revers_arrow {
+    width: 60px;
+    height: 60px;
+    background-image: url("Fotos/forwardsIcon.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.dialog_footer p {
+    font-family: "Figtree", sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+    font-style: normal;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.dialog_footer_forward_arrow {
+    width: 60px;
+    height: 60px;
+    background-image: url("Fotos/forwardsIcon.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

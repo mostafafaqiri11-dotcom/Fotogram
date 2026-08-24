@@ -1,15 +1,10 @@
-const images = document.querySelectorAll(".images img");
-const overlay = document.getElementById("imageOverlay");
-const overlayImage = document.getElementById("overlayImage");
+let dialogRef = document.getElementById("mydialog");
 
-images.forEach(image => {
-    image.addEventListener("click", () => {
-        overlayImage.src = image.src;
-        overlayImage.alt = image.alt;
-        overlay.classList.add("active");
-    });
-});
+function openDialog() {
+    dialogRef.showModal();
+}
 
-overlay.addEventListener("click", () => {
-    overlay.classList.remove("active");
-});
+function closeDialog() {
+    console.log("Close wurde geklickt");
+    dialogRef.close();
+}
