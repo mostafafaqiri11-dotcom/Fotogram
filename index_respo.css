@@ -1,0 +1,363 @@
+@media (max-width: 1200px) {
+
+    main {
+        width: 100%;
+        height: auto;
+        min-height: 1024px;
+    }
+
+    .fotogram {
+        width: calc(100% - 64px);
+        margin-top: 180px;
+    }
+
+    .images {
+        grid-template-columns: repeat(6, 1fr);
+        justify-items: center;
+    }
+
+    .images img:nth-child(8),
+    .images img:nth-child(9),
+    .images img:nth-child(10),
+    .images img:nth-child(11),
+    .images img:nth-child(12) {
+        grid-column: auto;
+    }
+
+    .site_header_nav {
+        margin-left: 32px;
+    }
+}
+@media (max-width: 1000px) {
+    .fotogram {
+        width: calc(100% - 64px);
+        margin-top: 180px;
+    }
+
+    .images {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .images img:nth-child(8),
+    .images img:nth-child(9),
+    .images img:nth-child(10),
+    .images img:nth-child(11),
+    .images img:nth-child(12) {
+        grid-column: auto;
+    }
+
+    .site_header_nav {
+        margin-left: 32px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .site_header {
+        height: 70px;
+    }
+
+    .site_header_nav {
+        margin-left: 24px;
+        width: 180px;
+    }
+
+    main {
+        min-height: auto;
+        padding-bottom: 80px;
+    }
+
+    .fotogram {
+        width: calc(100% - 32px);
+        margin-top: 100px;
+        gap: 50px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .images {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        row-gap: 20px;
+    }
+
+    .images img:nth-child(8),
+    .images img:nth-child(9),
+    .images img:nth-child(10),
+    .images img:nth-child(11),
+    .images img:nth-child(12) {
+        grid-column: auto;
+    }
+
+    .dialog {
+        width: calc(100% - 32px);
+        height: auto;
+        max-height: calc(100vh - 32px);
+        margin: auto;
+        border-radius: 30px;
+    }
+
+    .dialog_main {
+        width: 100%;
+        height: auto;
+        min-height: 600px;
+        padding: 32px;
+        gap: 32px;
+    }
+
+    .dialog_header {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .dialog_section {
+        width: 100%;
+    }
+
+    .dialog_section img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+    .dialog_footer {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    main {
+        width: 100%;
+        height: auto;
+        min-height: calc(100vh - 60px);
+        display: block;
+    }
+
+    /* HEADER */
+
+    .site_header {
+        width: 100%;
+        height: 60px;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .site_header_nav {
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    .site_header_nav img {
+        width: 140px;
+        height: auto;
+    }
+
+    /* FOTOGRAM */
+
+    .fotogram {
+        width: 100%;
+        margin-top: 28px;
+        padding: 0 19px;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 110%;
+        text-align: left;
+    }
+
+    /* BILDER */
+
+    .images {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 90px);
+        gap: 10px;
+        row-gap: 10px;
+        justify-content: center;
+    }
+
+    .images img {
+        width: 90px;
+        height: 90px;
+        border-radius: 10px;
+    }
+
+    /* Die Desktop-Verschiebung entfernen */
+
+    .images img:nth-child(8),
+    .images img:nth-child(9),
+    .images img:nth-child(10),
+    .images img:nth-child(11),
+    .images img:nth-child(12) {
+        grid-column: auto;
+    }
+
+    /* FOOTER */
+
+    .footer_hidden_site {
+        width: 100%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .site_footer {
+        width: 100%;
+        height: 80px;
+        margin: 0;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+
+    /* DIALOG */
+
+    .dialog {
+        width: 343px;
+        height: 664px;
+        border-radius: 40px;
+    }
+
+    .dialog_main {
+        width: 343px;
+        height: 664px;
+        border-radius: 40px;
+        gap: 48px;
+    }
+
+    .dialog_header {
+        width: 281px;
+        height: 69px;
+        gap: 8px;
+        display: flex;
+    }
+    .dialog_header img {
+        align-self: flex-end;
+    }
+
+    .dialog_header h2 {
+        font-size: 16px;
+        align-self: flex-start;
+    }
+
+    .dialog_section {
+        width: 100%;
+    }
+
+    .dialog_section img {
+        width: 100%;
+        height: auto;
+        max-height: 230px;
+        object-fit: contain;
+    }
+
+    .dialog_footer {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 0;
+    }
+
+    .dialog_footer_revers_arrow,
+    .dialog_footer_forward_arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .site_header {
+        height: 60px;
+    }
+
+    .site_header_nav {
+        margin-left: 16px;
+        width: 150px;
+        height: auto;
+    }
+
+    .site_header_nav img {
+        width: 150px;
+    }
+
+    .fotogram {
+        width: calc(100% - 24px);
+        margin-top: 70px;
+        gap: 40px;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 110%;
+    }
+
+    .images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        row-gap: 16px;
+    }
+
+    .images img {
+        border-radius: 12px;
+    }
+
+    .dialog {
+        width: calc(100% - 20px);
+        max-height: calc(100vh - 20px);
+        border-radius: 24px;
+    }
+
+    .dialog_main {
+        min-height: 500px;
+        padding: 24px 20px;
+        gap: 24px;
+    }
+
+    .dialog_header {
+        height: 32px;
+    }
+
+    .dialog_header h2 {
+        font-size: 20px;
+        max-width: calc(100% - 45px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .dialog_section img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    .dialog_footer {
+        width: 220px;
+        height: 50px;
+    }
+
+    .dialog_footer_revers_arrow,
+    .dialog_footer_forward_arrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer_hidden_site,
+    .site_footer {
+        height: 70px;
+    }
+}

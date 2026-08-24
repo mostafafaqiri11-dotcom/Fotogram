@@ -70,9 +70,22 @@ h1 {
 .images {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(7, 150px);
+    gap: 16px;
     row-gap: 40px;
+    justify-content: center;
+}
+
+.images img {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .images img:nth-child(8) {
@@ -93,17 +106,6 @@ h1 {
 
 .images img:nth-child(12) {
     grid-column: 6;
-}
-
-.images img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
-    display: block;
-    transition: transform 0.3s ease;
-    cursor: pointer;
 }
 
 .images img:hover {
@@ -151,6 +153,7 @@ h1 {
 }
 
 .dialog {
+    background-color: var(--primary-color);
     width: 688px;
     height: 674.71px;
     margin: 0 auto;

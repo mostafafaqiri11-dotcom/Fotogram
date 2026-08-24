@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fotogram</title>
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index_respo.css">
     <link rel="icon" type="image/svg" href="Fotos\Url_icon.svg">
 </head>
 
@@ -23,42 +23,42 @@
         <section class="fotogram">
             <h1>Your personal Photo Album</h1>
             <div class="images">
-                <img onclick="openDialog()" src="Fotos\alaska-810433_1280.jpg" alt="alaska-810433_1280" />
-                <img onclick="openDialog()" src="Fotos\anime-8788959_1280.jpg" alt="anime-8788959_1280" />
-                <img onclick="openDialog()" src="Fotos\atmosphere-8752835_1280.png" alt="atmosphere-8752835_1280" />
-                <img onclick="openDialog()" src="Fotos\blue-tit-8521052_1280.jpg" alt="blue-tit-8521052_1280" />
-                <img onclick="openDialog()" src="Fotos/hurricane-92968_1280.jpg" alt="hurricane-92968_1280" />
-                <img onclick="openDialog()" src="Fotos/lake-2896379_1280.jpg" alt="lake-2896379_1280" />
-                <img onclick="openDialog()" src="Fotos/moorente-8783210_1280.jpg" alt="moorente-8783210_1280" />
-                <img onclick="openDialog()" src="Fotos/sea-2563389_1280.jpg" alt="sea-2563389_1280" />
-                <img onclick="openDialog()" src="Fotos/snow-bunting-6781122_1280.jpg" alt="snow-bunting-6781122_1280" />
-                <img onclick="openDialog()" src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
-                    alt="snow-leopard-cubs-8039138_1280" />
-                <img onclick="openDialog()" src="Fotos/travel-8785493_1280.jpg" alt="travel-8785493_128" />
-                <img onclick="openDialog()" src="Fotos/winter-1675197_1280.jpg" alt="winter-1675197_1280" />
+                <img id="image1" src="Fotos/alaska-810433_1280.jpg" alt="alaska-810433_1280.jpg">
+                <img id="image2" src="Fotos/anime-8788959_1280.jpg" alt="anime-8788959_1280.jpg">
+                <img id="image3" src="Fotos/atmosphere-8752835_1280.png" alt="atmosphere-8752835_1280.png">
+                <img id="image4" src="Fotos/blue-tit-8521052_1280.jpg" alt="blue-tit-8521052_1280.jpg">
+                <img id="image5" src="Fotos/hurricane-92968_1280.jpg" alt="hurricane-92968_1280.jpg">
+                <img id="image6" src="Fotos/lake-2896379_1280.jpg" alt="lake-2896379_1280.jpg">
+                <img id="image7" src="Fotos/moorente-8783210_1280.jpg" alt="moorente-8783210_1280.jpg">
+                <img id="image8" src="Fotos/sea-2563389_1280.jpg" alt="sea-2563389_1280.jpg">
+                <img id="image9" src="Fotos/snow-bunting-6781122_1280.jpg" alt="snow-bunting-6781122_1280.jpg">
+                <img id="image10" src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
+                    alt="snow-leopard-cubs-8039138_1280.jpg">
+                <img id="image11" src="Fotos/travel-8785493_1280.jpg" alt="travel-8785493_1280.jpg">
+                <img id="image12" src="Fotos/winter-1675197_1280.jpg" alt="winter-1675197_1280.jpg">
             </div>
         </section>
         <div class="image-overlay" id="imageOverlay">
             <img id="overlayImage" src="" alt="">
         </div>
     </main>
-    <dialog class="dialog" id="mydialog">
+    <dialog class="dialog" id="myDialog">
         <main class="dialog_main">
             <header class="dialog_header">
                 <h2>
-                    hallo world
+
                 </h2>
-                <button onclick="closeDialog()" class="dialog_header_button" aria-label="Dialog schließen">
+                <button id="closeDialog" class="dialog_header_button" aria-label="Dialog schließen">
                 </button>
             </header>
             <section class="dialog_section">
-                <img src="Fotos/atmosphere-8752835_1280.png" alt="">
+                <img src="" alt="">
             </section>
             <footer class="dialog_footer">
                 <button class="dialog_footer_revers_arrow" aria-label="revers arrow">
                 </button>
                 <p>
-                    7/11
+
                 </p>
                 <button class="dialog_footer_forward_arrow" aria-label="forward arrow">
                 </button>
@@ -75,7 +75,5 @@
     </footer>
     <script src="index.js" defer></script>
 </body>
-
-<script src="index.js" defer></script>
 
 </html>
