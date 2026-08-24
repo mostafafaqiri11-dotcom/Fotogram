@@ -2,7 +2,6 @@ const dialog = document.getElementById("myDialog");
 const dialogTitle = document.querySelector(".dialog_header h2");
 const dialogImage = document.querySelector(".dialog_section img");
 const dialogNumber = document.querySelector(".dialog_footer p");
-
 const closeButton = document.getElementById("closeDialog");
 const reverseButton = document.querySelector(".dialog_footer_revers_arrow");
 const forwardButton = document.querySelector(".dialog_footer_forward_arrow");

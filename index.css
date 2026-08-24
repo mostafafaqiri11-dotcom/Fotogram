@@ -36,6 +36,12 @@ body {
     margin-left: 15vw;
     width: 215.19px;
     height: 41px;
+    cursor: pointer;
+}
+
+.site_header_nav img {
+    width: 215.19px;
+    height: 41px;
 }
 
 main {
@@ -68,7 +74,6 @@ h1 {
 }
 
 .images {
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(7, 150px);
     gap: 16px;
@@ -147,9 +152,14 @@ h1 {
     justify-content: center;
 }
 
-.site_footer_content image {
-    width: 133.280517578125;
-    height: 32;
+.site_footer_content_img1 {
+    width: 133.280517578125px;
+    height: 32px;
+}
+
+.site_footer_content_img2 {
+    width: 225px;
+    height: 17px;
 }
 
 .dialog {

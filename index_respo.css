@@ -1,14 +1,11 @@
-@media (max-width: 1200px) {
-
+@media (max-width: 1440px) {
     main {
-        width: 100%;
-        height: auto;
-        min-height: 1024px;
+        width: 100vw;
     }
 
     .fotogram {
-        width: calc(100% - 64px);
-        margin-top: 180px;
+        padding-left: 123px;
+        padding-right: 123px;
     }
 
     .images {
@@ -23,19 +20,42 @@
     .images img:nth-child(12) {
         grid-column: auto;
     }
-
-    .site_header_nav {
-        margin-left: 32px;
-    }
 }
-@media (max-width: 1000px) {
-    .fotogram {
-        width: calc(100% - 64px);
-        margin-top: 180px;
+
+@media (max-width: 1200px) {
+    main {
+        width: 100vw;
     }
 
     .images {
         grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+
+    .images img:nth-child(8),
+    .images img:nth-child(9),
+    .images img:nth-child(10),
+    .images img:nth-child(11),
+    .images img:nth-child(12) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 950px) {
+    .fotogram {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        width: 100vw;
+    }
+
+    .images {
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
     }
 
     .images img:nth-child(8),
@@ -46,318 +66,150 @@
         grid-column: auto;
     }
 
-    .site_header_nav {
-        margin-left: 32px;
-    }
+
 }
 
-
-@media (max-width: 800px) {
-
-    .site_header {
-        height: 70px;
-    }
-
-    .site_header_nav {
-        margin-left: 24px;
-        width: 180px;
-    }
-
-    main {
-        min-height: auto;
-        padding-bottom: 80px;
-    }
-
+@media (max-width: 775px) {
     .fotogram {
-        width: calc(100% - 32px);
-        margin-top: 100px;
-        gap: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     h1 {
-        font-size: 42px;
+        font-size: 48px;
     }
-
-    .images {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        row-gap: 20px;
-    }
-
-    .images img:nth-child(8),
-    .images img:nth-child(9),
-    .images img:nth-child(10),
-    .images img:nth-child(11),
-    .images img:nth-child(12) {
-        grid-column: auto;
-    }
-
-    .dialog {
-        width: calc(100% - 32px);
-        height: auto;
-        max-height: calc(100vh - 32px);
-        margin: auto;
-        border-radius: 30px;
-    }
-
-    .dialog_main {
-        width: 100%;
-        height: auto;
-        min-height: 600px;
-        padding: 32px;
-        gap: 32px;
-    }
-
-    .dialog_header {
-        width: 100%;
-        margin-top: 0;
-    }
-
-    .dialog_section {
-        width: 100%;
-    }
-
-    .dialog_section img {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: contain;
-    }
-
-    .dialog_footer {
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 600px) {
-
-    body {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-    }
-
-    main {
-        width: 100%;
-        height: auto;
-        min-height: calc(100vh - 60px);
-        display: block;
-    }
-
-    /* HEADER */
 
     .site_header {
-        width: 100%;
-        height: 60px;
-        margin: 0;
-        justify-content: center;
+        height: 72px;
     }
 
     .site_header_nav {
-        width: auto;
-        height: auto;
-        margin: 0;
+        margin: 0 auto;
     }
 
     .site_header_nav img {
-        width: 140px;
-        height: auto;
-    }
-
-    /* FOTOGRAM */
-
-    .fotogram {
-        width: 100%;
-        margin-top: 28px;
-        padding: 0 19px;
-        gap: 40px;
-        align-items: flex-start;
-    }
-
-    h1 {
-        font-size: 32px;
-        line-height: 110%;
-        text-align: left;
-    }
-
-    /* BILDER */
-
-    .images {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 90px);
-        gap: 10px;
-        row-gap: 10px;
-        justify-content: center;
-    }
-
-    .images img {
-        width: 90px;
-        height: 90px;
-        border-radius: 10px;
-    }
-
-    /* Die Desktop-Verschiebung entfernen */
-
-    .images img:nth-child(8),
-    .images img:nth-child(9),
-    .images img:nth-child(10),
-    .images img:nth-child(11),
-    .images img:nth-child(12) {
-        grid-column: auto;
-    }
-
-    /* FOOTER */
-
-    .footer_hidden_site {
-        width: 100%;
-        height: 80px;
-        margin: 0;
+        width: 168px;
+        height: 32px;
     }
 
     .site_footer {
-        width: 100%;
-        height: 80px;
-        margin: 0;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
+        height: 103px;
+        margin-top: 5px;
     }
 
-    /* DIALOG */
+    .site_footer_content_img1 {
+        width: 100px;
+        height: 24px;
+    }
+
+    .site_footer_content_img2 {
+        width: 225px;
+        height: 15px;
+    }
 
     .dialog {
         width: 343px;
         height: 664px;
-        border-radius: 40px;
+        margin-top: 72px;
     }
 
     .dialog_main {
         width: 343px;
         height: 664px;
-        border-radius: 40px;
-        gap: 48px;
+        margin-top: 15px;
+        gap: 30px;
+        justify-content: revert-layer;
     }
 
     .dialog_header {
         width: 281px;
         height: 69px;
+        flex-direction: column-reverse;
         gap: 8px;
-        display: flex;
-    }
-    .dialog_header img {
-        align-self: flex-end;
+        margin-top: 0;
     }
 
-    .dialog_header h2 {
-        font-size: 16px;
-        align-self: flex-start;
-    }
-
-    .dialog_section {
-        width: 100%;
+    .dialog_header_button {
+        align-self: end;
     }
 
     .dialog_section img {
-        width: 100%;
-        height: auto;
-        max-height: 230px;
-        object-fit: contain;
-    }
-
-    .dialog_footer {
-        width: 100%;
-        height: 50px;
-        margin-bottom: 0;
-    }
-
-    .dialog_footer_revers_arrow,
-    .dialog_footer_forward_arrow {
-        width: 40px;
-        height: 40px;
+        width: 300px;
+        height: 375px;
     }
 }
 
-@media (max-width: 500px) {
-
-    .site_header {
-        height: 60px;
-    }
-
-    .site_header_nav {
-        margin-left: 16px;
-        width: 150px;
-        height: auto;
-    }
-
-    .site_header_nav img {
-        width: 150px;
-    }
-
+@media (max-width: 710px) {
     .fotogram {
-        width: calc(100% - 24px);
-        margin-top: 70px;
-        gap: 40px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        gap: 56px;
     }
 
     h1 {
-        font-size: 32px;
-        line-height: 110%;
+        font-size: 48px;
+    }
+
+    .dialog_header {
+        margin-top: 20px;
     }
 
     .images {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        row-gap: 16px;
+        justify-items: center;
     }
 
-    .images img {
-        border-radius: 12px;
+    .images img:nth-child(8),
+    .images img:nth-child(9),
+    .images img:nth-child(10),
+    .images img:nth-child(11),
+    .images img:nth-child(12) {
+        grid-column: auto;
     }
 
-    .dialog {
-        width: calc(100% - 20px);
-        max-height: calc(100vh - 20px);
-        border-radius: 24px;
+    main {
+        width: 100vw;
+        height: auto;
     }
 
+}
+
+@media (max-width: 380px) {
     .dialog_main {
-        min-height: 500px;
-        padding: 24px 20px;
-        gap: 24px;
+        padding-right: 20px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 350px) {
+    .dialog_main {
+        padding-right: 35px;
+        padding-left: 0;
+        justify-content: space-between;
     }
 
     .dialog_header {
-        height: 32px;
+        padding-right: 13px;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 340px) {
+    .dialog_main {
+        padding-right: 45px;
+        padding-left: 0;
     }
 
-    .dialog_header h2 {
-        font-size: 20px;
-        max-width: calc(100% - 45px);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .dialog_section img {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        object-fit: contain;
+    .dialog_header {
+        padding-right: 13px;
+        padding-left: 0;
     }
 
     .dialog_footer {
-        width: 220px;
-        height: 50px;
-    }
-
-    .dialog_footer_revers_arrow,
-    .dialog_footer_forward_arrow {
-        width: 50px;
-        height: 50px;
-    }
-
-    .footer_hidden_site,
-    .site_footer {
-        height: 70px;
+        padding-right: 13px;
+        padding-left: 0;
     }
 }
