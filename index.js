@@ -29,12 +29,16 @@ for (let i = 1; i <= 12; i++) {
 forwardButton.addEventListener("click", () => {
     if (currentImage < 12) {
         showImage(currentImage + 1);
+    } else {
+        showImage(1);
     }
 });
 
 reverseButton.addEventListener("click", () => {
     if (currentImage > 1) {
         showImage(currentImage - 1);
+    } else {
+        showImage(12);
     }
 });
 
