@@ -20,44 +20,54 @@
         <section class="fotogram">
             <h1>Your personal Photo Album</h1>
             <div class="images">
-                <img tabindex="0" id="image1" src="Fotos/alaska-810433_1280.jpg" alt="alaska-810433_1280">
-                <img tabindex="0" id="image2" src="Fotos/anime-8788959_1280.jpg" alt="anime-8788959_1280">
-                <img tabindex="0" id="image3" src="Fotos/atmosphere-8752835_1280.png" alt="atmosphere-8752835_1280">
-                <img tabindex="0" id="image4" src="Fotos/blue-tit-8521052_1280.jpg" alt="blue-tit-8521052_1280">
-                <img tabindex="0" id="image5" src="Fotos/hurricane-92968_1280.jpg" alt="hurricane-92968_1280">
-                <img tabindex="0" id="image6" src="Fotos/lake-2896379_1280.jpg" alt="lake-2896379_1280">
-                <img tabindex="0" id="image7" src="Fotos/moorente-8783210_1280.jpg" alt="moorente-8783210_1280">
-                <img tabindex="0" id="image8" src="Fotos/sea-2563389_1280.jpg" alt="sea-2563389_1280">
-                <img tabindex="0" id="image9" src="Fotos/snow-bunting-6781122_1280.jpg" alt="snow-bunting-6781122_1280">
-                <img tabindex="0" id="image10" src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
+                <img onclick="render(0)" tabindex="0" src="Fotos/alaska-810433_1280.jpg" alt="alaska-810433_1280">
+
+                <img onclick="render(1)" tabindex="0" src="Fotos/anime-8788959_1280.jpg" alt="anime-8788959_1280">
+
+                <img onclick="render(2)" tabindex="0" src="Fotos/atmosphere-8752835_1280.png"
+                    alt="atmosphere-8752835_1280">
+
+                <img onclick="render(3)" tabindex="0" src="Fotos/blue-tit-8521052_1280.jpg" alt="blue-tit-8521052_1280">
+
+                <img onclick="render(4)" tabindex="0" src="Fotos/hurricane-92968_1280.jpg" alt="hurricane-92968_1280">
+
+                <img onclick="render(5)" tabindex="0" src="Fotos/lake-2896379_1280.jpg" alt="lake-2896379_1280">
+
+                <img onclick="render(6)" tabindex="0" src="Fotos/moorente-8783210_1280.jpg" alt="moorente-8783210_1280">
+
+                <img onclick="render(7)" tabindex="0" src="Fotos/sea-2563389_1280.jpg" alt="sea-2563389_1280">
+
+                <img onclick="render(8)" tabindex="0" src="Fotos/snow-bunting-6781122_1280.jpg"
+                    alt="snow-bunting-6781122_1280">
+
+                <img onclick="render(9)" tabindex="0" src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
                     alt="snow-leopard-cubs-8039138_1280">
-                <img tabindex="0" id="image11" src="Fotos/travel-8785493_1280.jpg" alt="travel-8785493_1280">
-                <img tabindex="0" id="image12" src="Fotos/winter-1675197_1280.jpg" alt="winter-1675197_1280">
+
+                <img onclick="render(10)" tabindex="0" src="Fotos/travel-8785493_1280.jpg" alt="travel-8785493_1280">
+
+                <img onclick="render(11)" tabindex="0" src="Fotos/winter-1675197_1280.jpg" alt="winter-1675197_1280">
             </div>
         </section>
-        <div class="image-overlay" id="imageOverlay">
-            <img id="overlayImage" src="" alt="">
-        </div>
     </main>
     <dialog class="dialog" id="myDialog">
         <main class="dialog_main">
             <header class="dialog_header">
-                <h2>
+                <h2 id="dialogHeader">
 
                 </h2>
-                <button id="closeDialog" class="dialog_header_button" aria-label="Dialog schließen">
+                <button onclick="render('myDialog')" class="dialog_header_button" aria-label="Dialog schließen">
                 </button>
             </header>
             <section class="dialog_section">
-                <img src="" alt="">
+                <img id="dialogImage" src="" alt="">
             </section>
             <footer class="dialog_footer">
-                <button class="dialog_footer_revers_arrow" aria-label="revers arrow">
+                <button onclick="render('previous')" class="dialog_footer_revers_arrow" aria-label="revers arrow">
                 </button>
-                <p>
+                <p id="imageNum">
 
                 </p>
-                <button class="dialog_footer_forward_arrow" aria-label="forward arrow">
+                <button onclick="render('next')" class="dialog_footer_forward_arrow" aria-label="forward arrow">
                 </button>
             </footer>
         </main>
