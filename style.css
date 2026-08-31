@@ -74,9 +74,7 @@ body:has(dialog[open]) {
 main {
     width: 100%;
     max-width: 1440px;
-    min-height: 100vh;
-
-    margin: 160px auto 0;
+    min-height: calc(100vh - 162px);
 
     padding-left: 60px;
     padding-right: 60px;
@@ -85,7 +83,8 @@ main {
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    justify-self: center;
 }
 
 
@@ -103,7 +102,6 @@ main {
     align-items: center;
     justify-content: center;
     gap: 56px;
-    margin-bottom: 56px;
 }
 
 h1 {
@@ -301,7 +299,8 @@ h1 {
     font-style: normal;
 
     color: var(--text-color);
-
+    
+    align-self: self-start;
     font-size: 24px;
     line-height: 100%;
     letter-spacing: 0;
@@ -340,7 +339,7 @@ h1 {
     max-width: 100%;
     height: 374px;
 
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .dialog_footer {
@@ -468,9 +467,6 @@ h1 {
 
 @media (max-width: 1000px) {
 
-    .site_header {
-        margin-bottom: 81px;
-    }
 
     .images {
         grid-template-columns: repeat(4, 1fr);
@@ -505,15 +501,12 @@ h1 {
 @media (max-width: 775px) {
 
     main {
-        width: 100%;
-        max-width: 100%;
-
-        min-height: auto;
-
         margin-top: 0;
 
         padding-left: 0;
         padding-right: 0;
+
+        min-height: calc(100vh - 103px - 72px);
     }
 
     .site_header {
@@ -522,8 +515,6 @@ h1 {
 
         margin-left: 0;
         margin-right: 0;
-
-        margin-bottom: 40px;
     }
 
     .site_header_nav {
@@ -669,6 +660,17 @@ h1 {
    ================================ */
 
 @media (max-width: 630px) {
+    main {
+        min-height: calc(100vh - 103px - 72px - 80px);
+    }
+
+    .site_header {
+        margin-bottom: 40px;
+    }
+
+    .site_footer {
+        margin-top: 40px;
+    }
 
     .fotogram {
         padding-left: 15px;

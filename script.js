@@ -16,14 +16,14 @@ const imageSrc = [
 const imageAlt = [
     "alaska-810433_1280",
     "anime-8788959_1280",
-    "atmosphere-8752835_1280",
+    "atmosphere-87535_1280",
     "blue-tit-8521052_1280",
     "hurricane-92968_1280",
     "lake-2896379_1280",
-    "moorente-8783210_1280",
+    "moorente-310_1280",
     "sea-2563389_1280",
-    "snow-bunting-6781122_1280",
-    "snow-leopard-cubs-8039138_1280",
+    "snow-bunting-8_1280",
+    "snow-leopard-cubs",
     "travel-8785493_1280",
     "winter-1675197_1280"
 ];
@@ -31,67 +31,80 @@ const imageAlt = [
 let currentIndex = 0;
 
 const dialog = document.getElementById("myDialog");
+const setImageTags = document.getElementById("images");
+
+function renderImages() {
+
+    let imageTags = "";
+
+    for (let index = 0; index < imageSrc.length; index++) {
+
+        imageTags += `
+            <img
+                onclick="render(${index})"
+                onkeyup="if (event.key === 'Enter') { render(${index}); }"
+                tabindex="0"
+                src="${imageSrc[index]}"
+                alt="${imageAlt[index]}">
+        `;
+    }
+
+    setImageTags.innerHTML = imageTags;
+}
 
 
 function render(id) {
 
-    for (let index = 0; index < imageSrc.length; index++) {
+    if (typeof id === "number") {
 
-        if (id == index) {
+        currentIndex = id;
 
-            currentIndex = index;
+        dialog.innerHTML = setTag(
+            currentIndex,
+            imageSrc[currentIndex],
+            imageAlt[currentIndex]
+        );
 
-            dialog.innerHTML = setTag(
-                currentIndex,
-                imageSrc[currentIndex],
-                imageAlt[currentIndex]
-            );
+        dialog.showModal();
+        return;
+    }
 
-            dialog.showModal();
-            return;
+    if (id === "previous") {
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = imageSrc.length - 1;
         }
 
+        dialog.innerHTML = setTag(
+            currentIndex,
+            imageSrc[currentIndex],
+            imageAlt[currentIndex]
+        );
 
-        if (id === "previous") {
+        return;
+    }
 
-            currentIndex = currentIndex - 1;
+    if (id === "next") {
 
-            if (currentIndex < 0) {
-                currentIndex = imageSrc.length - 1;
-            }
+        currentIndex++;
 
-            dialog.innerHTML = setTag(
-                currentIndex,
-                imageSrc[currentIndex],
-                imageAlt[currentIndex]
-            );
-
-            return;
+        if (currentIndex >= imageSrc.length) {
+            currentIndex = 0;
         }
 
+        dialog.innerHTML = setTag(
+            currentIndex,
+            imageSrc[currentIndex],
+            imageAlt[currentIndex]
+        );
 
-        if (id === "next") {
+        return;
+    }
 
-            currentIndex = currentIndex + 1;
-
-            if (currentIndex >= imageSrc.length) {
-                currentIndex = 0;
-            }
-
-            dialog.innerHTML = setTag(
-                currentIndex,
-                imageSrc[currentIndex],
-                imageAlt[currentIndex]
-            );
-
-            return;
-        }
-
-
-        if (id === "myDialog") {
-            dialog.close();
-            return;
-        }
+    if (id === "myDialog") {
+        dialog.close();
     }
 }
 
@@ -136,7 +149,7 @@ function setTag(i, src, alt) {
                 </h2>
 
                 <button
-                    onclick="render('myDialog')"
+                    onclick="render('myDialog')" 
                     class="dialog_header_button"
                     aria-label="Dialog schließen">
                 </button>

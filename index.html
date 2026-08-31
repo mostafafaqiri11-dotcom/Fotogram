@@ -9,7 +9,7 @@
     <link rel="icon" type="image/svg" href="Fotos\Url_icon.svg">
 </head>
 
-<body>
+<body onload="renderImages()">
     <header class="site_header">
         <nav class="site_header_nav">
             <img onclick="location.href='index.html'" src="Fotos/Fotogram.svg" alt="Fotogram Logo">
@@ -19,58 +19,11 @@
     <main>
         <section class="fotogram">
             <h1>Your personal Photo Album</h1>
-            <div class="images">
-                <img onclick="render(0)" tabindex="0" src="Fotos/alaska-810433_1280.jpg" alt="alaska-810433_1280">
-
-                <img onclick="render(1)" tabindex="0" src="Fotos/anime-8788959_1280.jpg" alt="anime-8788959_1280">
-
-                <img onclick="render(2)" tabindex="0" src="Fotos/atmosphere-8752835_1280.png"
-                    alt="atmosphere-8752835_1280">
-
-                <img onclick="render(3)" tabindex="0" src="Fotos/blue-tit-8521052_1280.jpg" alt="blue-tit-8521052_1280">
-
-                <img onclick="render(4)" tabindex="0" src="Fotos/hurricane-92968_1280.jpg" alt="hurricane-92968_1280">
-
-                <img onclick="render(5)" tabindex="0" src="Fotos/lake-2896379_1280.jpg" alt="lake-2896379_1280">
-
-                <img onclick="render(6)" tabindex="0" src="Fotos/moorente-8783210_1280.jpg" alt="moorente-8783210_1280">
-
-                <img onclick="render(7)" tabindex="0" src="Fotos/sea-2563389_1280.jpg" alt="sea-2563389_1280">
-
-                <img onclick="render(8)" tabindex="0" src="Fotos/snow-bunting-6781122_1280.jpg"
-                    alt="snow-bunting-6781122_1280">
-
-                <img onclick="render(9)" tabindex="0" src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
-                    alt="snow-leopard-cubs-8039138_1280">
-
-                <img onclick="render(10)" tabindex="0" src="Fotos/travel-8785493_1280.jpg" alt="travel-8785493_1280">
-
-                <img onclick="render(11)" tabindex="0" src="Fotos/winter-1675197_1280.jpg" alt="winter-1675197_1280">
-            </div>
+            <div id="images" class="images"></div>
         </section>
     </main>
-    <dialog class="dialog" id="myDialog">
-        <main class="dialog_main">
-            <header class="dialog_header">
-                <h2 id="dialogHeader">
+    <dialog tabindex="0" class="dialog" id="myDialog">
 
-                </h2>
-                <button onclick="render('myDialog')" class="dialog_header_button" aria-label="Dialog schließen">
-                </button>
-            </header>
-            <section class="dialog_section">
-                <img id="dialogImage" src="" alt="">
-            </section>
-            <footer class="dialog_footer">
-                <button onclick="render('previous')" class="dialog_footer_revers_arrow" aria-label="revers arrow">
-                </button>
-                <p id="imageNum">
-
-                </p>
-                <button onclick="render('next')" class="dialog_footer_forward_arrow" aria-label="forward arrow">
-                </button>
-            </footer>
-        </main>
     </dialog>
     <footer class="footer_hidden_site">
         <div class="site_footer">
