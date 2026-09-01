@@ -53,10 +53,7 @@ body:has(dialog[open]) {
 .site_header_nav {
     width: 215.19px;
     height: 41px;
-
-    margin-left: max(120px,
-            calc((100vw - 1440px) / 2 + 120px));
-
+    margin-left: max(120px, calc((100vw - 1440px) / 2 + 120px));
     cursor: pointer;
 }
 
@@ -71,16 +68,13 @@ body:has(dialog[open]) {
    MAIN
    ================================ */
 
-main {
+.main_section {
     width: 100%;
     max-width: 1440px;
     min-height: calc(100vh - 162px);
-
     padding-left: 60px;
     padding-right: 60px;
-
     background-color: var(--secondary-color);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,17 +100,13 @@ main {
 
 h1 {
     width: 100%;
-
     font-family: var(--font-family);
     color: var(--text-color);
-
     font-weight: 800;
     font-style: normal;
-
     font-size: 56px;
     line-height: 100%;
     letter-spacing: 0;
-
     text-align: center;
 }
 
@@ -126,33 +116,24 @@ h1 {
    ================================ */
 
 .images {
-
     display: grid;
     grid-template-columns: repeat(7, 150px);
-
     gap: 24px;
     row-gap: 29px;
-
     margin-left: 0;
     margin-right: 0;
-
     justify-content: center;
 }
 
 .images img {
     width: 150px;
     height: 150px;
-
     aspect-ratio: 1 / 1;
     object-fit: cover;
-
     border: 2px solid var(--border-color);
     border-radius: 16px;
-
     display: block;
-
     transition: transform 0.3s ease;
-
     cursor: pointer;
 }
 
@@ -207,9 +188,7 @@ h1 {
 .footer_hidden_site {
     width: 100%;
     height: 81px;
-
     background-color: var(--secondary-color);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,12 +197,9 @@ h1 {
 .site_footer_content {
     width: 225px;
     height: 65px;
-
     gap: 16px;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 }
@@ -243,50 +219,36 @@ h1 {
    DIALOG
    ================================ */
 
-.dialog {
+.dialogOpen {
     width: 688px;
-    max-width: calc(100vw - 30px);
     max-height: 674.71px;
-
-    margin: 81px auto 0;
-
+    margin: auto;
     background-color: var(--primary-color);
-
     border: none;
     border-radius: 40px;
-
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .dialog_main {
-    width: 100%;
-    min-width: 0;
-
     padding-left: 64px;
     padding-right: 64px;
-
-    margin-top: 0;
-
     background-color: var(--primary-color);
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
-    justify-content: flex-start;
-
+    justify-content: center;
     gap: 48px;
 }
 
 .dialog_header {
     width: 100%;
     max-width: 560px;
-
     height: 32px;
-
-    margin-top: 56px;
-
+    padding-top: 56px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -294,12 +256,9 @@ h1 {
 
 .dialog_header h2 {
     font-family: var(--font-family);
-
     font-weight: 700;
     font-style: normal;
-
     color: var(--text-color);
-    
     align-self: self-start;
     font-size: 24px;
     line-height: 100%;
@@ -308,18 +267,14 @@ h1 {
 
 .dialog_header_button {
     flex-shrink: 0;
-
     width: 32px;
     height: 32px;
-
     background-image: url("Fotos/closeIcon.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     border: none;
     background-color: transparent;
-
     cursor: pointer;
 }
 
@@ -329,7 +284,6 @@ h1 {
 
 .dialog_section {
     width: 100%;
-
     display: flex;
     justify-content: center;
 }
@@ -338,36 +292,29 @@ h1 {
     width: 560px;
     max-width: 100%;
     height: 374px;
-
     object-fit: cover;
 }
 
 .dialog_footer {
     width: 261px;
     height: 60px;
-
-    margin-bottom: 56px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 56px;
 }
 
 .dialog_footer_revers_arrow,
 .dialog_footer_forward_arrow {
     flex-shrink: 0;
-
     width: 60px;
     height: 60px;
-
     background-image: url("Fotos/forwardsIcon.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     border: none;
     background-color: transparent;
-
     cursor: pointer;
 }
 
@@ -377,15 +324,11 @@ h1 {
 
 .dialog_footer p {
     font-family: var(--font-family);
-
     font-weight: 500;
     font-style: normal;
-
     color: var(--text-color);
-
     font-size: 16px;
     line-height: 16px;
-
     text-align: center;
 }
 
@@ -395,8 +338,7 @@ h1 {
    ================================ */
 
 @media (max-width: 1440px) {
-
-    main {
+    .main_section {
         width: 100%;
     }
 
@@ -425,7 +367,6 @@ h1 {
    ================================ */
 
 @media (max-width: 1200px) {
-
     .fotogram {
         padding-left: 60px;
         padding-right: 60px;
@@ -453,7 +394,6 @@ h1 {
    ================================ */
 
 @media (max-width: 1100px) {
-
     .fotogram {
         padding-left: 30px;
         padding-right: 30px;
@@ -466,8 +406,6 @@ h1 {
    ================================ */
 
 @media (max-width: 1000px) {
-
-
     .images {
         grid-template-columns: repeat(4, 1fr);
         justify-items: center;
@@ -480,47 +418,29 @@ h1 {
     }
 }
 
-
-/* ================================
-   900px
-   ================================ */
-
-/*@media (max-width: 900px) {
-
-    .images {
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
-    }
-}
-
-
 /* ================================
    775px
    ================================ */
 
 @media (max-width: 775px) {
-
-    main {
+    .main_section {
         margin-top: 0;
-
         padding-left: 0;
         padding-right: 0;
-
         min-height: calc(100vh - 103px - 72px);
     }
 
     .site_header {
         width: 100%;
         height: 72px;
-
         margin-left: 0;
         margin-right: 0;
+        margin-bottom: 40px;
     }
 
     .site_header_nav {
         width: 168px;
         height: 32px;
-
         margin-left: auto;
         margin-right: auto;
     }
@@ -533,13 +453,10 @@ h1 {
     .fotogram {
         width: 100%;
         max-width: 100%;
-
         padding-left: 15px;
         padding-right: 15px;
-
         margin-left: 0;
         margin-right: 0;
-
         gap: 56px;
     }
 
@@ -551,15 +468,11 @@ h1 {
     .images {
         width: 100%;
         max-width: 100%;
-
         grid-template-columns: repeat(3, 150px);
-
         justify-content: center;
         justify-items: center;
-
         margin-left: 0;
         margin-right: 0;
-
         gap: 16px;
         row-gap: 40px;
     }
@@ -578,9 +491,9 @@ h1 {
     .site_footer {
         width: 100%;
         height: 103px;
-
         margin-left: 0;
         margin-right: 0;
+        margin-top: 40px;
     }
 
     .site_footer_content_img1 {
@@ -594,44 +507,29 @@ h1 {
     }
 
     /* Dialog */
-    .dialog {
+    .dialogOpen {
         width: 343px;
-        max-width: calc(100vw - 30px);
-
         height: 664px;
-
-        margin-top: 71px;
-
         border-radius: 30px;
+        display: flex;
+        justify-self: center;
+        align-items: center;
     }
 
     .dialog_main {
-        width: 100%;
-        min-width: 0;
-
         height: 664px;
-
         padding-left: 21px;
         padding-right: 21px;
-
-        margin-top: 15px;
-
         gap: 30px;
-
-        justify-content: flex-start;
     }
 
     .dialog_header {
         width: 100%;
         max-width: 281px;
-
         height: 69px;
-
         flex-direction: column-reverse;
-
         gap: 8px;
-
-        margin-top: 0;
+        padding-top: 0;
     }
 
     .dialog_header_button {
@@ -651,26 +549,20 @@ h1 {
     .dialog_footer {
         width: 261px;
         max-width: 100%;
+        padding-bottom: 0;
     }
 }
 
 
 /* ================================
-   470px
+   630px
    ================================ */
 
 @media (max-width: 630px) {
-    main {
+    .main_section {
         min-height: calc(100vh - 103px - 72px - 80px);
     }
 
-    .site_header {
-        margin-bottom: 40px;
-    }
-
-    .site_footer {
-        margin-top: 40px;
-    }
 
     .fotogram {
         padding-left: 15px;
@@ -688,7 +580,6 @@ h1 {
    ================================ */
 
 @media (max-width: 390px) {
-
     .fotogram {
         padding-left: 10px;
         padding-right: 10px;
@@ -716,7 +607,6 @@ h1 {
    ================================ */
 
 @media (max-width: 350px) {
-
     .fotogram {
         padding-left: 10px;
         padding-right: 10px;
@@ -752,8 +642,6 @@ h1 {
    ================================ */
 
 @media (max-width: 340px) {
-
-
     .images {
         grid-template-columns: 140px;
     }
@@ -765,13 +653,3 @@ h1 {
 }
 
 
-/* ================================
-   SHORT MOBILE SCREEN
-   ================================ */
-
-@media (max-height: 667px) {
-
-    .dialog {
-        margin-top: 2px;
-    }
-}
