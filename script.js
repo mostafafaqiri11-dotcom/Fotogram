@@ -28,24 +28,10 @@ const imageAlt = [
     "winter-1675197_1280"
 ];
 
-
 let currentIndex = 0;
 const dialog = document.getElementById("myDialog");
-const ImageTags = document.getElementById("images");
-
-
-// ================================
-// BILDER AUF DER STARTSEITE
-// ================================
-
-function renderImages() {
-    ImageTags.innerHTML = setImageTags();
-}
-
-
-// ================================
-// DIALOG ÖFFNEN
-// ================================
+const imageTags = document.getElementById("images");
+imageTags.innerHTML = setImageTags();
 
 function openDialog(id) {
     currentIndex = id;
@@ -60,30 +46,11 @@ function openDialog(id) {
     }
 }
 
-
-// ================================
-// VORHERIGES BILD
-// ================================
-
-function previousImage() {
-    currentIndex--;
+function changeImage(direction) {
+    currentIndex += direction;
     if (currentIndex < 0) {
         currentIndex = imageSrc.length - 1;
     }
-    dialog.innerHTML = setTag(
-        currentIndex,
-        imageSrc[currentIndex],
-        imageAlt[currentIndex]
-    );
-}
-
-
-// ================================
-// NÄCHSTES BILD
-// ================================
-
-function nextImage() {
-    currentIndex++;
     if (currentIndex >= imageSrc.length) {
         currentIndex = 0;
     }
@@ -92,53 +59,43 @@ function nextImage() {
         imageSrc[currentIndex],
         imageAlt[currentIndex]
     );
+    if (direction === 1) {
+        dialog.querySelector(".dialog_footer_forward_arrow").focus();
+    }
+    if (direction === -1) {
+        dialog.querySelector(".dialog_footer_revers_arrow").focus();
+    }
 }
-
-
-// ================================
-// DIALOG SCHLIESSEN
-// ================================
 
 function closeDialog() {
     dialog.close();
     dialog.classList.remove("dialogOpen");
+    document.activeElement.blur();
 }
-
-
-// ================================
-// TASTATUR
-// ================================
 
 document.addEventListener("keydown", function (event) {
     if (!dialog.open) {
         return;
     }
     if (event.key === "ArrowRight") {
-        nextImage();
+        event.preventDefault();
+        changeImage(1);
     }
     if (event.key === "ArrowLeft") {
-        previousImage();
+        event.preventDefault();
+        changeImage(-1);
     }
     if (event.key === "Escape") {
+        event.preventDefault();
         closeDialog();
     }
 });
-
-
-// ================================
-// KLICK AUF HINTERGRUND
-// ================================
 
 dialog.addEventListener("click", function (event) {
     if (event.target === dialog) {
         closeDialog();
     }
 });
-
-
-// ================================
-// DIALOG HTML
-// ================================
 
 function setTag(i, src, alt) {
     return `
@@ -147,112 +104,138 @@ function setTag(i, src, alt) {
                 <h2>
                     ${alt}
                 </h2>
+
                 <button
                     onclick="closeDialog()"
                     class="dialog_header_button"
-                    aria-label="Dialog schließen">
+                    aria-label="Close dialog">
                 </button>
             </header>
+
             <section class="dialog_section">
                 <img
                     id="dialogImage"
                     src="${src}"
                     alt="${alt}">
             </section>
+
             <footer class="dialog_footer">
                 <button
-                    onclick="previousImage()"
+                    onclick="changeImage(-1)"
                     class="dialog_footer_revers_arrow"
-                    aria-label="previous image">
+                    aria-label="Previous image">
                 </button>
+
                 <p>
                     ${i + 1}/${imageSrc.length}
                 </p>
+
                 <button
-                    onclick="nextImage()"
+                    onclick="changeImage(1)"
                     class="dialog_footer_forward_arrow"
-                    aria-label="next image">
+                    aria-label="Next image">
                 </button>
             </footer>
-
         </main>
     `;
 }
 
 function setImageTags() {
     return `
-            <img
-                onclick="openDialog(0)"
-                onkeyup="if (event.key === 'Enter') { openDialog(0); }"
-                tabindex="0"
-                src="Fotos/alaska-810433_1280.jpg"
-                alt="alaska-810433_1280">
-            <img
-                onclick="openDialog(1)"
-                onkeyup="if (event.key === 'Enter') { openDialog(1); }"
-                tabindex="0"
-                src="Fotos/anime-8788959_1280.jpg"
-                alt="anime-8788959_1280">
-            <img
-                onclick="openDialog(2)"
-                onkeyup="if (event.key === 'Enter') { openDialog(2); }"
-                tabindex="0"
-                src="Fotos/atmosphere-8752835_1280.png"
-                alt="atmosphere-87535_1280">
-            <img
-                onclick="openDialog(3)"
-                onkeyup="if (event.key === 'Enter') { openDialog(3); }"
-                tabindex="0"
-                src="Fotos/blue-tit-8521052_1280.jpg"
-                alt="blue-tit-8521052_1280">
-            <img
-                onclick="openDialog(4)"
-                onkeyup="if (event.key === 'Enter') { openDialog(4); }"
-                tabindex="0"
-                src="Fotos/hurricane-92968_1280.jpg"
-                alt="hurricane-92968_1280">
-            <img
-                onclick="openDialog(5)"
-                onkeyup="if (event.key === 'Enter') { openDialog(5); }"
-                tabindex="0"
-                src="Fotos/lake-2896379_1280.jpg"
-                alt="lake-2896379_1280">
-            <img
-                onclick="openDialog(6)"
-                onkeyup="if (event.key === 'Enter') { openDialog(6); }"
-                tabindex="0"
-                src="Fotos/moorente-8783210_1280.jpg"
-                alt="moorente-310_1280">
-            <img
-                onclick="openDialog(7)"
-                onkeyup="if (event.key === 'Enter') { openDialog(7); }"
-                tabindex="0"
-                src="Fotos/sea-2563389_1280.jpg"
-                alt="sea-2563389_1280">
-            <img
-                onclick="openDialog(8)"
-                onkeyup="if (event.key === 'Enter') { openDialog(8); }"
-                tabindex="0"
-                src="Fotos/snow-bunting-6781122_1280.jpg"
-                alt="snow-bunting-8_1280">
-            <img
-                onclick="openDialog(9)"
-                onkeyup="if (event.key === 'Enter') { openDialog(9); }"
-                tabindex="0"
-                src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
-                alt="snow-leopard-cubs">
-            <img
-                onclick="openDialog(10)"
-                onkeyup="if (event.key === 'Enter') { openDialog(10); }"
-                tabindex="0"
-                src="Fotos/travel-8785493_1280.jpg"
-                alt="travel-8785493_1280">
-            <img
-                onclick="openDialog(11)"
-                onkeyup="if (event.key === 'Enter') { openDialog(11); }"
-                tabindex="0"
-                src="Fotos/winter-1675197_1280.jpg"
-                alt="winter-1675197_1280">
-        </div>
+        <img
+            onclick="openDialog(0)"
+            onkeyup="if (event.key === 'Enter') { openDialog(0); }"
+            tabindex="0"
+            aria-label="Open image 1"
+            src="Fotos/alaska-810433_1280.jpg"
+            alt="Alaska">
+
+        <img
+            onclick="openDialog(1)"
+            onkeyup="if (event.key === 'Enter') { openDialog(1); }"
+            tabindex="0"
+            aria-label="Open image 2"
+            src="Fotos/anime-8788959_1280.jpg"
+            alt="Anime">
+
+        <img
+            onclick="openDialog(2)"
+            onkeyup="if (event.key === 'Enter') { openDialog(2); }"
+            tabindex="0"
+            aria-label="Open image 3"
+            src="Fotos/atmosphere-8752835_1280.png"
+            alt="Atmosphere">
+
+        <img
+            onclick="openDialog(3)"
+            onkeyup="if (event.key === 'Enter') { openDialog(3); }"
+            tabindex="0"
+            aria-label="Open image 4"
+            src="Fotos/blue-tit-8521052_1280.jpg"
+            alt="Blue tit">
+
+        <img
+            onclick="openDialog(4)"
+            onkeyup="if (event.key === 'Enter') { openDialog(4); }"
+            tabindex="0"
+            aria-label="Open image 5"
+            src="Fotos/hurricane-92968_1280.jpg"
+            alt="Hurricane">
+
+        <img
+            onclick="openDialog(5)"
+            onkeyup="if (event.key === 'Enter') { openDialog(5); }"
+            tabindex="0"
+            aria-label="Open image 6"
+            src="Fotos/lake-2896379_1280.jpg"
+            alt="Lake">
+
+        <img
+            onclick="openDialog(6)"
+            onkeyup="if (event.key === 'Enter') { openDialog(6); }"
+            tabindex="0"
+            aria-label="Open image 7"
+            src="Fotos/moorente-8783210_1280.jpg"
+            alt="Eurasian coot">
+
+        <img
+            onclick="openDialog(7)"
+            onkeyup="if (event.key === 'Enter') { openDialog(7); }"
+            tabindex="0"
+            aria-label="Open image 8"
+            src="Fotos/sea-2563389_1280.jpg"
+            alt="Sea">
+
+        <img
+            onclick="openDialog(8)"
+            onkeyup="if (event.key === 'Enter') { openDialog(8); }"
+            tabindex="0"
+            aria-label="Open image 9"
+            src="Fotos/snow-bunting-6781122_1280.jpg"
+            alt="Snow bunting">
+
+        <img
+            onclick="openDialog(9)"
+            onkeyup="if (event.key === 'Enter') { openDialog(9); }"
+            tabindex="0"
+            aria-label="Open image 10"
+            src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
+            alt="Snow leopard cubs">
+
+        <img
+            onclick="openDialog(10)"
+            onkeyup="if (event.key === 'Enter') { openDialog(10); }"
+            tabindex="0"
+            aria-label="Open image 11"
+            src="Fotos/travel-8785493_1280.jpg"
+            alt="Travel">
+
+        <img
+            onclick="openDialog(11)"
+            onkeyup="if (event.key === 'Enter') { openDialog(11); }"
+            tabindex="0"
+            aria-label="Open image 12"
+            src="Fotos/winter-1675197_1280.jpg"
+            alt="Winter">
     `;
 }
