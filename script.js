@@ -44,6 +44,7 @@ function openDialog(id) {
             imageAlt[currentIndex]
         );
     }
+    dialog.querySelector(".dialog_header_button").focus();
 }
 
 function changeImage(direction) {
