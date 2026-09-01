@@ -29,43 +29,41 @@ const imageAlt = [
 ];
 
 let currentIndex = 0;
+let Tags = [];
 const dialog = document.getElementById("myDialog");
-const imageTags = document.getElementById("images");
-imageTags.innerHTML = setImageTags();
+const imageId = document.getElementById("images");
+
+function setimageTags() {
+    for (let index = 0; index < imageSrc.length; index++) {
+        Tags += imageTags(index);
+    }
+    imageId.innerHTML = Tags;
+}
 
 function openDialog(id) {
     currentIndex = id;
     dialog.showModal();
     dialog.classList.add("dialogOpen");
-    for (let index = 0; index < imageSrc.length; index++) {
-        dialog.innerHTML = setTag(
-            currentIndex,
-            imageSrc[currentIndex],
-            imageAlt[currentIndex]
-        );
-    }
-    dialog.querySelector(".dialog_header_button").focus();
-}
-
-function changeImage(direction) {
-    currentIndex += direction;
-    if (currentIndex < 0) {
-        currentIndex = imageSrc.length - 1;
-    }
-    if (currentIndex >= imageSrc.length) {
-        currentIndex = 0;
-    }
     dialog.innerHTML = setTag(
         currentIndex,
         imageSrc[currentIndex],
         imageAlt[currentIndex]
     );
-    if (direction === 1) {
-        dialog.querySelector(".dialog_footer_forward_arrow").focus();
-    }
-    if (direction === -1) {
-        dialog.querySelector(".dialog_footer_revers_arrow").focus();
-    }
+    dialog.querySelector(".dialog_header_button").focus();
+}
+
+function changeImage(direction) {
+    currentIndex = (currentIndex + direction + imageSrc.length) % imageSrc.length;
+    dialog.innerHTML = setTag(
+        currentIndex,
+        imageSrc[currentIndex],
+        imageAlt[currentIndex]
+    );
+    dialog.querySelector(
+        direction === 1
+            ? ".dialog_footer_forward_arrow"
+            : ".dialog_footer_revers_arrow"
+    ).focus();
 }
 
 function closeDialog() {
@@ -75,21 +73,10 @@ function closeDialog() {
 }
 
 document.addEventListener("keydown", function (event) {
-    if (!dialog.open) {
-        return;
-    }
-    if (event.key === "ArrowRight") {
-        event.preventDefault();
-        changeImage(1);
-    }
-    if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        changeImage(-1);
-    }
-    if (event.key === "Escape") {
-        event.preventDefault();
-        closeDialog();
-    }
+    if (!dialog.open) return;
+    if (event.key === "ArrowRight") changeImage(1);
+    if (event.key === "ArrowLeft") changeImage(-1);
+    if (event.key === "Escape") closeDialog();
 });
 
 dialog.addEventListener("click", function (event) {
@@ -141,102 +128,14 @@ function setTag(i, src, alt) {
     `;
 }
 
-function setImageTags() {
+function imageTags(number) {
     return `
         <img
-            onclick="openDialog(0)"
-            onkeyup="if (event.key === 'Enter') { openDialog(0); }"
+            onclick="openDialog(${number})"
+            onkeyup="if (event.key === 'Enter') { openDialog(${number}); }"
             tabindex="0"
-            aria-label="Open image 1"
-            src="Fotos/alaska-810433_1280.jpg"
-            alt="Alaska">
-
-        <img
-            onclick="openDialog(1)"
-            onkeyup="if (event.key === 'Enter') { openDialog(1); }"
-            tabindex="0"
-            aria-label="Open image 2"
-            src="Fotos/anime-8788959_1280.jpg"
-            alt="Anime">
-
-        <img
-            onclick="openDialog(2)"
-            onkeyup="if (event.key === 'Enter') { openDialog(2); }"
-            tabindex="0"
-            aria-label="Open image 3"
-            src="Fotos/atmosphere-8752835_1280.png"
-            alt="Atmosphere">
-
-        <img
-            onclick="openDialog(3)"
-            onkeyup="if (event.key === 'Enter') { openDialog(3); }"
-            tabindex="0"
-            aria-label="Open image 4"
-            src="Fotos/blue-tit-8521052_1280.jpg"
-            alt="Blue tit">
-
-        <img
-            onclick="openDialog(4)"
-            onkeyup="if (event.key === 'Enter') { openDialog(4); }"
-            tabindex="0"
-            aria-label="Open image 5"
-            src="Fotos/hurricane-92968_1280.jpg"
-            alt="Hurricane">
-
-        <img
-            onclick="openDialog(5)"
-            onkeyup="if (event.key === 'Enter') { openDialog(5); }"
-            tabindex="0"
-            aria-label="Open image 6"
-            src="Fotos/lake-2896379_1280.jpg"
-            alt="Lake">
-
-        <img
-            onclick="openDialog(6)"
-            onkeyup="if (event.key === 'Enter') { openDialog(6); }"
-            tabindex="0"
-            aria-label="Open image 7"
-            src="Fotos/moorente-8783210_1280.jpg"
-            alt="Eurasian coot">
-
-        <img
-            onclick="openDialog(7)"
-            onkeyup="if (event.key === 'Enter') { openDialog(7); }"
-            tabindex="0"
-            aria-label="Open image 8"
-            src="Fotos/sea-2563389_1280.jpg"
-            alt="Sea">
-
-        <img
-            onclick="openDialog(8)"
-            onkeyup="if (event.key === 'Enter') { openDialog(8); }"
-            tabindex="0"
-            aria-label="Open image 9"
-            src="Fotos/snow-bunting-6781122_1280.jpg"
-            alt="Snow bunting">
-
-        <img
-            onclick="openDialog(9)"
-            onkeyup="if (event.key === 'Enter') { openDialog(9); }"
-            tabindex="0"
-            aria-label="Open image 10"
-            src="Fotos/snow-leopard-cubs-8039138_1280.jpg"
-            alt="Snow leopard cubs">
-
-        <img
-            onclick="openDialog(10)"
-            onkeyup="if (event.key === 'Enter') { openDialog(10); }"
-            tabindex="0"
-            aria-label="Open image 11"
-            src="Fotos/travel-8785493_1280.jpg"
-            alt="Travel">
-
-        <img
-            onclick="openDialog(11)"
-            onkeyup="if (event.key === 'Enter') { openDialog(11); }"
-            tabindex="0"
-            aria-label="Open image 12"
-            src="Fotos/winter-1675197_1280.jpg"
-            alt="Winter">
+            aria-label="Open image ${number + 1}"
+            src="${imageSrc[number]}"
+            alt="${imageAlt[number]}">
     `;
 }
