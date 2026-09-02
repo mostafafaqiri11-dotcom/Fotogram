@@ -29,22 +29,22 @@ const imageAlt = [
 ];
 
 let currentIndex = 0;
-let Tags = [];
+let images = [];
 const dialog = document.getElementById("myDialog");
-const imageId = document.getElementById("images");
+const imagesContainer = document.getElementById("images");
 
-function setimageTags() {
+function renderImages() {
     for (let index = 0; index < imageSrc.length; index++) {
-        Tags += imageTags(index);
+        images += imageTemplate(index);
     }
-    imageId.innerHTML = Tags;
+    imagesContainer.innerHTML = images;
 }
 
 function openDialog(id) {
     currentIndex = id;
     dialog.showModal();
     dialog.classList.add("dialogOpen");
-    dialog.innerHTML = setTag(
+    dialog.innerHTML = dialogTemplate(
         currentIndex,
         imageSrc[currentIndex],
         imageAlt[currentIndex]
@@ -54,7 +54,7 @@ function openDialog(id) {
 
 function changeImage(direction) {
     currentIndex = (currentIndex + direction + imageSrc.length) % imageSrc.length;
-    dialog.innerHTML = setTag(
+    dialog.innerHTML = dialogTemplate(
         currentIndex,
         imageSrc[currentIndex],
         imageAlt[currentIndex]
@@ -85,7 +85,7 @@ dialog.addEventListener("click", function (event) {
     }
 });
 
-function setTag(i, src, alt) {
+function dialogTemplate(i, src, alt) {
     return `
         <main class="dialog_main">
             <header class="dialog_header">
@@ -128,7 +128,7 @@ function setTag(i, src, alt) {
     `;
 }
 
-function imageTags(number) {
+function imageTemplate(number) {
     return `
         <img
             onclick="openDialog(${number})"
