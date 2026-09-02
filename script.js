@@ -44,7 +44,7 @@ function openDialog(id) {
     currentIndex = id;
     dialog.showModal();
     dialog.classList.add("dialogOpen");
-    dialog.innerHTML = dialogTemplate(
+    dialog.innerHTML = renderDialog(
         currentIndex,
         imageSrc[currentIndex],
         imageAlt[currentIndex]
@@ -54,7 +54,7 @@ function openDialog(id) {
 
 function changeImage(direction) {
     currentIndex = (currentIndex + direction + imageSrc.length) % imageSrc.length;
-    dialog.innerHTML = dialogTemplate(
+    dialog.innerHTML = renderDialog(
         currentIndex,
         imageSrc[currentIndex],
         imageAlt[currentIndex]
@@ -85,7 +85,7 @@ dialog.addEventListener("click", function (event) {
     }
 });
 
-function dialogTemplate(i, src, alt) {
+function renderDialog(i, src, alt) {
     return `
         <main class="dialog_main">
             <header class="dialog_header">
